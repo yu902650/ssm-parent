@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.ssm.dao.IUserMapper">
+
+    <select id="findById" resultType="com.ssm.pojo.User">
+            select
+                id,
+                name,
+                address,
+                age,
+                sex,
+                phone_no as phoneNo
+             from user where id=#{id}
+    </select>
+
+    <insert id="insertOne">
+        <selectKey resultType="java.lang.Integer" order="AFTER" keyProperty="id">
+            SELECT LAST_INSERT_ID()
+        </selectKey>
+        insert into user (name, address, age, sex, phone_no) VALUES
+        (#{params.name},
+        #{params.address},
+        #{params.age},
+        #{params.sex},
+        #{params.phoneNo})
+    </insert>
+
+    <select id="findMore" resultType="com.ssm.pojo.User">
+        select
+        id,
+        name,
+        address,
+        age,
+        sex,
+        phone_no as phoneNo
+        from user
+        <where>
+            <if test="name !=null">
+                and name = #{name}
+            </if>
+            <if test="phoneNo !=null">
+                and phone_no= #{phoneNo}
+            </if>
+        </where>
+    </select>
+
+    <insert id="save">
+    insert into user (name, address, age, sex, phone_no) VALUES
+            (
+            #{name},
+            #{address},
+            #{age},
+            #{sex},
+            #{phoneNo}
+            )
+    </insert>
+
+    <insert id="insertBatchList" parameterType="java.util.List">
+        insert into user (name, address, age, sex, phone_no) values
+        <foreach item="item" index="index" collection="userList" open="" close="" separator=",">
+            (
+            #{item.name},
+            #{item.address},
+            #{item.age},
+            #{item.sex},
+            #{item.phoneNo}
+            )
+        </foreach>
+    </insert>
+
+    <insert id="insert">
+            insert into  user (name, address, age, sex, phone_no) values
+             (#{name,jdbcType=VARCHAR}  ,#{address,jdbcType=VARCHAR} ,#{age,jdbcType=INTEGER} ,#{sex,jdbcType=INTEGER} ,#{phoneNo,jdbcType=VARCHAR} )
+    </insert>
+
+    <select id="findAll" resultType="com.ssm.pojo.User">
+            select
+             name,
+             address,
+             age,
+             sex,
+             phone_no phoneNo
+             from user
+    </select>
+</mapper>

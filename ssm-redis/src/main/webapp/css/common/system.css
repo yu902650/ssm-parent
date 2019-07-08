@@ -1,0 +1,76 @@
+.search-item {
+    float: left;
+    padding-left: 10px;
+}
+
+.news_search {
+    padding: 10px 10px;
+}
+
+.news_search .layui-inline {
+    margin: 5px 5px 5px 0;
+}
+/**/
+.childrenBody{
+    margin: 10px 10px 0px 10px;
+}
+
+/*图片等比例缩放*/
+.keepShape{
+    width: auto;
+    height: auto;
+    max-width: 100%;
+    max-height: 100%;
+}
+/*图片预览类*/
+.preview-size{
+    display: table-cell;
+    vertical-align: middle;
+    text-align: center;
+    padding: 10px 20px;
+    width: 460px;
+    height: 477px;
+}
+
+/*清除浮动*/
+.clearfix {
+    position: relative;
+}
+
+.clearfix:after, .clearfix:before {
+    content: "";
+    clear: both;
+    display: block;
+    left: 0 !important;
+}
+
+/* 默认链接 */
+a:link {
+    color: #9b9ea0;
+    text-decoration: none;
+}
+/* 居右 */
+.layui-table-page>div {
+    height: 26px;
+    float: right;
+}
+
+.fr {
+    float: right;
+}
+
+.fl {
+    float: left;
+}
+
+.txt-c {
+    text-align: center;
+}
+
+.txt-l {
+    text-align: left;
+}
+
+.txt-r {
+    text-align: right;
+}

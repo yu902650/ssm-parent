@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.ssm.dao.INewMapper">
+
+    <insert id="addNews">
+        insert into news_data(uniquekey,title,date,category,author_name,url,thumbnail_pic_s,thumbnail_pic_s02,thumbnail_pic_s03)
+        values (#{uniquekey},#{title},#{date},#{category},#{author_name},#{url},#{thumbnail_pic_s},#{thumbnail_pic_s02},#{thumbnail_pic_s03})
+    </insert>
+
+    <select id="queryList" resultType="com.ssm.pojo.HistoryEntity">
+        select * from history_today
+    </select>
+
+    <select id="findObjById" resultType="com.ssm.pojo.HistoryEntity">
+        select * from history_today where id=#{id}
+    </select>
+
+</mapper>

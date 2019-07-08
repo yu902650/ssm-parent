@@ -1,0 +1,47 @@
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>今日历史</title>
+    <link rel="stylesheet" href="../layui/css/layui.css" media="all">
+    <link rel="stylesheet" href="../css/common/system.css" media="all">
+    <style type="text/css">
+        .layui-table-cell {
+            height: 48px;
+            line-height: 48px;
+        }
+
+        .title-left {
+            display: inline-block;
+            margin-right: 20px;
+        }
+
+        .titleName {
+            font-size: 1.2em;
+            font-weight: 400;
+        }
+        .title-help{
+            font-size: .9em;
+            vertical-align: -webkit-baseline-middle;
+            color: #1AA094;
+        }
+    </style>
+</head>
+<body class="childrenBody">
+<form class="layui-form" id="searchForm">
+    <blockquote class="layui-elem-quote news_search">
+        <div class="layui-inline">
+
+            <div class="search-item">
+                <a class="layui-btn search_btn" id="searchBatch">查询</a>
+            </div>
+        </div>
+    </blockquote>
+</form>
+<table id="codeList" lay-filter="codeList"></table>
+
+<script type="text/javascript" src="../layui/layui.js"></script>
+<script type="text/javascript" src="../js/common/system.js"></script>
+<script type="text/javascript" src="../js/common/conf.js"></script>
+<script type="text/javascript" src="../js/history_today/history_today1.js"></script>
+</body>
+</html>

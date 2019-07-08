@@ -1,0 +1,16 @@
+终止线程: Thread.stop 不推荐
+
+中断线程:
+public void Thread.interrupt();  中断线程
+public boolean Thread.isInterrupt();  判断是否被中断
+public static boolean Thread.interrupted(); 判断是否被中断,并清除当前中断状态.
+
+挂起 suspend 和 继续执行 resume:
+-suspend()不会释放锁
+-如果加锁发生在resume()之前,则死锁发生
+
+守护线程
+
+线程优先级
+
+多线程02 00:45:42

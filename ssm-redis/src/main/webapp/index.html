@@ -1,0 +1,272 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+    <link rel="stylesheet" href="/css/navHk.css">
+    <script rel="script" src="/js/common/jquery-3.2.1.min.js"></script>
+    <script src="/js/index_nav/navHk.js"></script>
+    <link rel="stylesheet" href="css/ripple.css">
+    <script src="js/index_nav/ripple.min.js"></script>
+</head>
+<style>
+    * { margin:0; padding:0; box-sizing:border-box;}
+    li{ list-style: none;}
+    a{ text-decoration:none;}
+    .container{ width: 1200px; margin: auto; padding-top: 100px;}
+    body{
+        width: 100%;
+        height: 100%;
+        background-image: url(images/demo.jpg);
+    }
+</style>
+<script>
+    $(function(){
+        $(".A-nav>li").navHk();
+        //水波纹
+        new Ripple({
+            opacity : 0.6,
+            speed : 1,
+            bgColor : "#fff",
+            cursor : true
+        })
+    })
+</script>
+<body>
+<div class="container">
+    <ul class="A-nav">
+        <li>
+            <a>新闻类</a>
+            <ul>
+                <li><a href="static/history_today.html">历史上的今天</a>
+                    <!--三级菜单 不用，隐藏掉-->
+                    <!--<ul>-->
+                        <!--<li><a href="javascript:void(0)"></a></li>-->
+                        <!--<li><a href="javascript:void(0)">aaaa</a></li>-->
+                        <!--<li><a href="javascript:void(0)">aaaa</a></li>-->
+                    <!--</ul>-->
+                </li>
+                <li><a href="static/color_ticket.html">彩票信息查询</a>
+                    <!--<ul>-->
+                        <!--三级菜单 不用，隐藏掉-->
+                        <!--<li><a href="javascript:void(0)">aaaa</a></li>-->
+                        <!--<li><a href="javascript:void(0)">aaaa</a></li>-->
+                        <!--<li><a href="javascript:void(0)">aaaa</a></li>-->
+                    <!--</ul>-->
+                </li>
+                <li><a href="static/find_phone_belongs.html">手机归属地查询</a>
+                    <!--<ul>-->
+                        <!--三级菜单 不用，隐藏掉-->
+                        <!--<li><a href="javascript:void(0)">aaaa</a></li>-->
+                        <!--<li><a href="javascript:void(0)">aaaa</a></li>-->
+                        <!--<li><a href="javascript:void(0)">aaaa</a></li>-->
+                    <!--</ul>-->
+                </li>
+                <li><a href="static/new_top.html">今日热点新闻</a>
+                    <!--<ul>-->
+                        <!--三级菜单 不用，隐藏掉-->
+                        <!--<li><a href="javascript:void(0)">aaaa</a></li>-->
+                        <!--<li><a href="javascript:void(0)">aaaa</a></li>-->
+                        <!--<li><a href="javascript:void(0)">aaaa</a></li>-->
+                    <!--</ul>-->
+                </li>
+            </ul>
+        </li>
+        <li ><a href="javascript:void(0)">BBBB</a>
+            <ul>
+                <li><a href="javascript:void(0)">bbbb</a>
+                    <!--<ul>-->
+                        <!--<li><a href="javascript:void(0)">bbbb</a></li>-->
+                        <!--<li><a href="javascript:void(0)">bbbb</a></li>-->
+                        <!--<li><a href="javascript:void(0)">bbbb</a></li>-->
+                    <!--</ul>-->
+                </li>
+                <li><a href="javascript:void(0)">bbbb</a>
+                    <!--<ul>-->
+                        <!--<li><a href="javascript:void(0)">bbbb</a></li>-->
+                        <!--<li><a href="javascript:void(0)">bbbb</a></li>-->
+                        <!--<li><a href="javascript:void(0)">bbbb</a></li>-->
+                    <!--</ul>-->
+                </li>
+                <li><a href="javascript:void(0)">bbbb</a>
+                    <!--<ul>-->
+                        <!--<li><a href="javascript:void(0)">bbbb</a></li>-->
+                        <!--<li><a href="javascript:void(0)">bbbb</a></li>-->
+                        <!--<li><a href="javascript:void(0)">bbbb</a></li>-->
+                    <!--</ul>-->
+                </li>
+                <li><a href="javascript:void(0)">bbbb</a>
+                    <!--<ul>-->
+                        <!--<li><a href="javascript:void(0)">bbbb</a></li>-->
+                        <!--<li><a href="javascript:void(0)">bbbb</a></li>-->
+                        <!--<li><a href="javascript:void(0)">bbbb</a></li>-->
+                    <!--</ul>-->
+                </li>
+            </ul>
+        </li>
+        <li><a href="javascript:void(0)">CCCC</a>
+            <ul>
+                <li><a href="javascript:void(0)">cccc</a>
+                    <!--<ul>-->
+                        <!--<li><a href="javascript:void(0)">cccc</a></li>-->
+                        <!--<li><a href="javascript:void(0)">cccc</a></li>-->
+                        <!--<li><a href="javascript:void(0)">cccc</a></li>-->
+                    <!--</ul>-->
+                </li>
+                <li><a href="javascript:void(0)">cccc</a>
+                    <!--<ul>-->
+                        <!--<li><a href="javascript:void(0)">cccc</a></li>-->
+                        <!--<li><a href="javascript:void(0)">cccc</a></li>-->
+                        <!--<li><a href="javascript:void(0)">cccc</a></li>-->
+                    <!--</ul>-->
+                </li>
+                <li><a href="javascript:void(0)">cccc</a>
+                    <!--<ul>-->
+                        <!--<li><a href="javascript:void(0)">cccc</a></li>-->
+                        <!--<li><a href="javascript:void(0)">cccc</a></li>-->
+                        <!--<li><a href="javascript:void(0)">cccc</a></li>-->
+                    <!--</ul>-->
+                </li>
+                <li><a href="javascript:void(0)">cccc</a>
+                    <!--<ul>-->
+                        <!--<li><a href="javascript:void(0)">cccc</a></li>-->
+                        <!--<li><a href="javascript:void(0)">cccc</a></li>-->
+                        <!--<li><a href="javascript:void(0)">cccc</a></li>-->
+                    <!--</ul>-->
+                </li>
+            </ul>
+        </li>
+        <li><a href="javascript:void(0)">CCCC</a>
+            <ul>
+                <li><a href="javascript:void(0)">cccc</a>
+                    <!--<ul>-->
+                    <!--<li><a href="javascript:void(0)">cccc</a></li>-->
+                    <!--<li><a href="javascript:void(0)">cccc</a></li>-->
+                    <!--<li><a href="javascript:void(0)">cccc</a></li>-->
+                    <!--</ul>-->
+                </li>
+                <li><a href="javascript:void(0)">cccc</a>
+                    <!--<ul>-->
+                    <!--<li><a href="javascript:void(0)">cccc</a></li>-->
+                    <!--<li><a href="javascript:void(0)">cccc</a></li>-->
+                    <!--<li><a href="javascript:void(0)">cccc</a></li>-->
+                    <!--</ul>-->
+                </li>
+                <li><a href="javascript:void(0)">cccc</a>
+                    <!--<ul>-->
+                    <!--<li><a href="javascript:void(0)">cccc</a></li>-->
+                    <!--<li><a href="javascript:void(0)">cccc</a></li>-->
+                    <!--<li><a href="javascript:void(0)">cccc</a></li>-->
+                    <!--</ul>-->
+                </li>
+                <li><a href="javascript:void(0)">cccc</a>
+                    <!--<ul>-->
+                    <!--<li><a href="javascript:void(0)">cccc</a></li>-->
+                    <!--<li><a href="javascript:void(0)">cccc</a></li>-->
+                    <!--<li><a href="javascript:void(0)">cccc</a></li>-->
+                    <!--</ul>-->
+                </li>
+            </ul>
+        </li>
+        <li><a href="javascript:void(0)">CCCC</a>
+            <ul>
+                <li><a href="javascript:void(0)">cccc</a>
+                    <!--<ul>-->
+                    <!--<li><a href="javascript:void(0)">cccc</a></li>-->
+                    <!--<li><a href="javascript:void(0)">cccc</a></li>-->
+                    <!--<li><a href="javascript:void(0)">cccc</a></li>-->
+                    <!--</ul>-->
+                </li>
+                <li><a href="javascript:void(0)">cccc</a>
+                    <!--<ul>-->
+                    <!--<li><a href="javascript:void(0)">cccc</a></li>-->
+                    <!--<li><a href="javascript:void(0)">cccc</a></li>-->
+                    <!--<li><a href="javascript:void(0)">cccc</a></li>-->
+                    <!--</ul>-->
+                </li>
+                <li><a href="javascript:void(0)">cccc</a>
+                    <!--<ul>-->
+                    <!--<li><a href="javascript:void(0)">cccc</a></li>-->
+                    <!--<li><a href="javascript:void(0)">cccc</a></li>-->
+                    <!--<li><a href="javascript:void(0)">cccc</a></li>-->
+                    <!--</ul>-->
+                </li>
+                <li><a href="javascript:void(0)">cccc</a>
+                    <!--<ul>-->
+                    <!--<li><a href="javascript:void(0)">cccc</a></li>-->
+                    <!--<li><a href="javascript:void(0)">cccc</a></li>-->
+                    <!--<li><a href="javascript:void(0)">cccc</a></li>-->
+                    <!--</ul>-->
+                </li>
+            </ul>
+        </li>
+        <li><a href="javascript:void(0)">CCCC</a>
+            <ul>
+                <li><a href="javascript:void(0)">cccc</a>
+                    <!--<ul>-->
+                    <!--<li><a href="javascript:void(0)">cccc</a></li>-->
+                    <!--<li><a href="javascript:void(0)">cccc</a></li>-->
+                    <!--<li><a href="javascript:void(0)">cccc</a></li>-->
+                    <!--</ul>-->
+                </li>
+                <li><a href="javascript:void(0)">cccc</a>
+                    <!--<ul>-->
+                    <!--<li><a href="javascript:void(0)">cccc</a></li>-->
+                    <!--<li><a href="javascript:void(0)">cccc</a></li>-->
+                    <!--<li><a href="javascript:void(0)">cccc</a></li>-->
+                    <!--</ul>-->
+                </li>
+                <li><a href="javascript:void(0)">cccc</a>
+                    <!--<ul>-->
+                    <!--<li><a href="javascript:void(0)">cccc</a></li>-->
+                    <!--<li><a href="javascript:void(0)">cccc</a></li>-->
+                    <!--<li><a href="javascript:void(0)">cccc</a></li>-->
+                    <!--</ul>-->
+                </li>
+                <li><a href="javascript:void(0)">cccc</a>
+                    <!--<ul>-->
+                    <!--<li><a href="javascript:void(0)">cccc</a></li>-->
+                    <!--<li><a href="javascript:void(0)">cccc</a></li>-->
+                    <!--<li><a href="javascript:void(0)">cccc</a></li>-->
+                    <!--</ul>-->
+                </li>
+            </ul>
+        </li>
+        <li><a href="javascript:void(0)">CCCC</a>
+            <ul>
+                <li><a href="javascript:void(0)">cccc</a>
+                    <!--<ul>-->
+                    <!--<li><a href="javascript:void(0)">cccc</a></li>-->
+                    <!--<li><a href="javascript:void(0)">cccc</a></li>-->
+                    <!--<li><a href="javascript:void(0)">cccc</a></li>-->
+                    <!--</ul>-->
+                </li>
+                <li><a href="javascript:void(0)">cccc</a>
+                    <!--<ul>-->
+                    <!--<li><a href="javascript:void(0)">cccc</a></li>-->
+                    <!--<li><a href="javascript:void(0)">cccc</a></li>-->
+                    <!--<li><a href="javascript:void(0)">cccc</a></li>-->
+                    <!--</ul>-->
+                </li>
+                <li><a href="javascript:void(0)">cccc</a>
+                    <!--<ul>-->
+                    <!--<li><a href="javascript:void(0)">cccc</a></li>-->
+                    <!--<li><a href="javascript:void(0)">cccc</a></li>-->
+                    <!--<li><a href="javascript:void(0)">cccc</a></li>-->
+                    <!--</ul>-->
+                </li>
+                <li><a href="javascript:void(0)">cccc</a>
+                    <!--<ul>-->
+                    <!--<li><a href="javascript:void(0)">cccc</a></li>-->
+                    <!--<li><a href="javascript:void(0)">cccc</a></li>-->
+                    <!--<li><a href="javascript:void(0)">cccc</a></li>-->
+                    <!--</ul>-->
+                </li>
+            </ul>
+        </li>
+
+    </ul>
+
+</div>
+</body>
+</html>

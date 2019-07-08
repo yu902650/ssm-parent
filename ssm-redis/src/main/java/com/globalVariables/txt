@@ -1,0 +1,74 @@
+  /**
+     *  mq-api 调用此接口 .重新转为全局变量.
+     * setDeviceTempSignal
+     * @return
+     */
+    @RequestMapping(value = "setDeviceTempSignal", method = RequestMethod.POST)
+    public String setDeviceTempSignal(@RequestParam(required = false) String mapKey,
+                                    @RequestParam(required = false) String mapVal) {
+        System.out.println("我被调用了");
+        try {
+
+            DeviceTempSingle dts = (DeviceTempSingle) Encryptor.deserializeFromStr(mapVal);
+            if (!StringUtil.isEmpty(mapKey) && dts != null) {
+                Storage.deviceTempAndSingleRecord.put(mapKey, dts);
+                return "true";
+            }
+            return "true";
+        } catch (Exception ex) {
+            ex.printStackTrace();
+            return "false";
+        }
+    }
+
+    /**
+     *  查询 变量
+     * @param mapKey
+     * @return
+     * @throws Exception
+     */
+    @RequestMapping(value = "getDeviceTempSignal", method = RequestMethod.POST)
+    public String getDeviceTempSignal(@RequestParam(required = false) String mapKey) throws Exception {
+        DeviceTempSingle dts= Storage.deviceTempAndSingleRecord.get(mapKey);
+        if (dts != null) {
+            return Encryptor.serializeToString(dts);
+        }
+        return null;
+    }
+
+
+
+
+
+    //处理设备上报的温度信息.存库
+    private void deviceTempRequest(MqttDeviceTempRequest deviceTempRequest) {
+        // 设备号
+        String deviceNo = deviceTempRequest.getClientID();
+        //判断非空 然后更新后,put入map
+        if (Storage.deviceTempAndSingleRecord.get(deviceNo) != null) {
+            DeviceTempSingle dst = Storage.deviceTempAndSingleRecord.get(deviceNo);
+            dst.setTemp(deviceTempRequest.getTemp1());
+            setDeviceTempSignal(deviceNo,dst);
+        } else {
+            DeviceTempSingle dst = new DeviceTempSingle();
+            dst.setTemp(deviceTempRequest.getTemp1());
+            Storage.deviceTempAndSingleRecord.put(deviceNo, dst);
+            setDeviceTempSignal(deviceNo,dst);
+        }
+    }
+
+    //全局变量操作传向interface模块
+    private void setDeviceTempSignal(String deviceNo, DeviceTempSingle dst) {
+        try {
+            String dvStr = Encryptor.serializeToString(dst);
+            System.out.println(dvStr);
+            Map<String, String> param = new HashMap<>();
+            param.put("mapKey", deviceNo);
+            param.put("mapVal", dvStr);
+            HttpUtil.post("http://localhost:31256/deviceHeart/setDeviceTempSignal", param);
+            System.out.println("---------------------------");
+            System.out.println("http请求发送成功");
+        } catch (Exception ex) {
+            ex.printStackTrace();
+        }
+    }

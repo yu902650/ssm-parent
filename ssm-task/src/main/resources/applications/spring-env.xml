@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:util="http://www.springframework.org/schema/util"
+       xmlns:context="http://www.springframework.org/schema/context"
+       xmlns="http://www.springframework.org/schema/beans"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans
+            classpath:xsd/spring-beans.xsd
+            http://www.springframework.org/schema/util
+            http://www.springframework.org/schema/util/spring-util.xsd
+            http://www.springframework.org/schema/context
+            http://www.springframework.org/schema/context/spring-context-3.0.xsd">
+
+    <!-- 开发环境配置信息 -->
+    <beans profile="dev">
+        <util:properties id="CONFIG_PROPERTIES" location="classpath*:properties/dev/commons_config.properties">
+        </util:properties>
+        <bean id="config"
+              class="org.springframework.beans.factory.config.PropertyPlaceholderConfigurer">
+            <property name="order" value="1"/>
+            <property name="ignoreUnresolvablePlaceholders" value="true"/>
+            <property name="locations">
+                <!-- 开发 -->
+                <list>
+                    <value>classpath*:properties/dev/commons_config.properties</value>
+                    <value>classpath*:properties/dev/jdbc.properties</value>
+                </list>
+            </property>
+        </bean>
+        <context:property-placeholder ignore-unresolvable="true"
+                                      location="classpath*:/properties/dev/commons_config.properties"/>
+    </beans>
+
+    <!-- 测试环境配置信息 -->
+    <beans profile="test">
+        <util:properties id="CONFIG_PROPERTIES"
+                         location="classpath*:properties/test/commons_config.properties">
+        </util:properties>
+        <bean class="org.springframework.beans.factory.config.PropertyPlaceholderConfigurer">
+            <property name="order" value="1"/>
+            <property name="ignoreUnresolvablePlaceholders" value="true"/>
+            <property name="locations">
+                <!-- 开发 -->
+                <list>
+                    <value>classpath*:properties/test/commons_config.properties</value>
+                    <value>classpath*:properties/test/jdbc.properties</value>
+                </list>
+            </property>
+        </bean>
+        <context:property-placeholder ignore-unresolvable="true"
+                                      location="classpath*:/properties/test/commons_config.properties"/>
+    </beans>
+
+    <!-- 生产环境 -->
+    <beans profile="prod">
+        <util:properties id="CONFIG_PROPERTIES"
+                         location="classpath*:properties/prod/commons_config.properties">
+        </util:properties>
+        <bean class="org.springframework.beans.factory.config.PropertyPlaceholderConfigurer">
+            <property name="order" value="1"/>
+            <property name="ignoreUnresolvablePlaceholders" value="true"/>
+            <property name="locations">
+                <!-- 开发 -->
+                <list>
+                    <value>classpath*:properties/prod/commons_config.properties</value>
+                    <value>classpath*:properties/prod/jdbc.properties</value>
+                </list>
+            </property>
+        </bean>
+        <context:property-placeholder ignore-unresolvable="true"
+                                      location="classpath*:/properties/prod/commons_config.properties"/>
+    </beans>
+
+
+</beans>
