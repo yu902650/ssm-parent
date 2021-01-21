@@ -31,7 +31,7 @@
         <lifecycle-mapping.version>1.0.0</lifecycle-mapping.version>
         <org.springframework.version>4.2.3.RELEASE</org.springframework.version>
         <junit.version>4.11</junit.version>
-        <jackson.version>2.5.1</jackson.version>
+        <jackson.version>2.12.1</jackson.version>
         <servlet-api.version>2.5</servlet-api.version>
         <jsp-api.version>2.1</jsp-api.version>
         <jstl.version>1.2</jstl.version>
